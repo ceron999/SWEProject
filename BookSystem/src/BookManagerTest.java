@@ -40,8 +40,6 @@ class BookManagerTest {
 	void testListSearch() {
 		System.out.printf("Test1. heap Search\n");
 		
-		//bookManager.printList();
-		
 		Random random = new Random();
 		random.setSeed(System.currentTimeMillis());
 		
@@ -61,7 +59,7 @@ class BookManagerTest {
 		
 		int randomNum = random.nextInt(100);
 		Book nowBook = bookTree.search_BS(randomNum).getBookData();
-		System.out.printf("탐색 중인 책 : Book{id : '%d', 제목 : '%s', 저자 : '%s', 출판년도 : '%d'\n}"
+		System.out.printf("탐색 중인 책 : Book{id : '%d', 제목 : '%s', 저자 : '%s', 출판년도 : '%d'}\n"
 				, nowBook.bookIndex, nowBook.bookName
 				, nowBook.bookAuthor, nowBook.bookPublicationYear);
 	}

@@ -53,9 +53,6 @@ public class BookTree {
 				}
 			}
 		}
-		
-		//System.out.printf("Book{id : '%d', 제목 : '%s', 저자 : '%s', 출판년도 : '%d' 도서가 추가되었습니다.}\n"
-				//,paramBookData.bookIndex, paramBookData.bookName, paramBookData.bookAuthor, paramBookData.bookPublicationYear);
 	}
 
 	//Function : paramBookData가 적절하지 않은 데이터를 표함하는지를 확인
@@ -75,6 +72,8 @@ public class BookTree {
 		return true;
 	}
 	
+	//BookTree에서 BS 방식으로 값을 찾아나감
+	//재귀 대신 while을 통해 구현
 	public BookNode search_BS(int searchIndex) {
 		BookNode nowNode = root;
 		
@@ -105,14 +104,4 @@ public class BookTree {
 		//System.out.printf("찾는 index 존재 x\n");
 		return null;
 	}
-	
-	//출처: https://you88.tistory.com/31 [영운's 블로그:티스토리]
-	public void leftInorderTraversal(BookNode node) {
-        //좌측 중위 순회
-        if(node == null)
-            return;
-        leftInorderTraversal(node.leftChildNode);
-        System.out.printf("%d ", node.getBookIndex());
-        leftInorderTraversal(node.rightChildNode);
-    }
 }
